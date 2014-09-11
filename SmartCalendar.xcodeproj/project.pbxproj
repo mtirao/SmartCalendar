@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B67334F019C25C49007E2844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67334EF19C25C49007E2844 /* AppDelegate.swift */; };
+		B67334F319C25C49007E2844 /* SmartCalendar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B67334F119C25C49007E2844 /* SmartCalendar.xcdatamodeld */; };
+		B67334F519C25C49007E2844 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67334F419C25C49007E2844 /* ViewController.swift */; };
+		B67334F819C25C49007E2844 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B67334F619C25C49007E2844 /* Main.storyboard */; };
+		B67334FA19C25C49007E2844 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67334F919C25C49007E2844 /* Images.xcassets */; };
+		B67334FD19C25C49007E2844 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B67334FB19C25C49007E2844 /* LaunchScreen.xib */; };
+		B673350919C25C49007E2844 /* SmartCalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B673350819C25C49007E2844 /* SmartCalendarTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B673350319C25C49007E2844 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B67334E219C25C49007E2844 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B67334E919C25C49007E2844;
+			remoteInfo = SmartCalendar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B67334EA19C25C49007E2844 /* SmartCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B67334EE19C25C49007E2844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B67334EF19C25C49007E2844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B67334F219C25C49007E2844 /* SmartCalendar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartCalendar.xcdatamodel; sourceTree = "<group>"; };
+		B67334F419C25C49007E2844 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B67334F719C25C49007E2844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B67334F919C25C49007E2844 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B67334FC19C25C49007E2844 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B673350219C25C49007E2844 /* SmartCalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartCalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B673350719C25C49007E2844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B673350819C25C49007E2844 /* SmartCalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartCalendarTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B67334E719C25C49007E2844 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B67334FF19C25C49007E2844 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B67334E119C25C49007E2844 = {
+			isa = PBXGroup;
+			children = (
+				B67334EC19C25C49007E2844 /* SmartCalendar */,
+				B673350519C25C49007E2844 /* SmartCalendarTests */,
+				B67334EB19C25C49007E2844 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B67334EB19C25C49007E2844 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B67334EA19C25C49007E2844 /* SmartCalendar.app */,
+				B673350219C25C49007E2844 /* SmartCalendarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B67334EC19C25C49007E2844 /* SmartCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				B67334EF19C25C49007E2844 /* AppDelegate.swift */,
+				B67334F419C25C49007E2844 /* ViewController.swift */,
+				B67334F619C25C49007E2844 /* Main.storyboard */,
+				B67334F919C25C49007E2844 /* Images.xcassets */,
+				B67334FB19C25C49007E2844 /* LaunchScreen.xib */,
+				B67334F119C25C49007E2844 /* SmartCalendar.xcdatamodeld */,
+				B67334ED19C25C49007E2844 /* Supporting Files */,
+			);
+			path = SmartCalendar;
+			sourceTree = "<group>";
+		};
+		B67334ED19C25C49007E2844 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B67334EE19C25C49007E2844 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B673350519C25C49007E2844 /* SmartCalendarTests */ = {
+			isa = PBXGroup;
+			children = (
+				B673350819C25C49007E2844 /* SmartCalendarTests.swift */,
+				B673350619C25C49007E2844 /* Supporting Files */,
+			);
+			path = SmartCalendarTests;
+			sourceTree = "<group>";
+		};
+		B673350619C25C49007E2844 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B673350719C25C49007E2844 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B67334E919C25C49007E2844 /* SmartCalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B673350C19C25C49007E2844 /* Build configuration list for PBXNativeTarget "SmartCalendar" */;
+			buildPhases = (
+				B67334E619C25C49007E2844 /* Sources */,
+				B67334E719C25C49007E2844 /* Frameworks */,
+				B67334E819C25C49007E2844 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartCalendar;
+			productName = SmartCalendar;
+			productReference = B67334EA19C25C49007E2844 /* SmartCalendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B673350119C25C49007E2844 /* SmartCalendarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B673350F19C25C49007E2844 /* Build configuration list for PBXNativeTarget "SmartCalendarTests" */;
+			buildPhases = (
+				B67334FE19C25C49007E2844 /* Sources */,
+				B67334FF19C25C49007E2844 /* Frameworks */,
+				B673350019C25C49007E2844 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B673350419C25C49007E2844 /* PBXTargetDependency */,
+			);
+			name = SmartCalendarTests;
+			productName = SmartCalendarTests;
+			productReference = B673350219C25C49007E2844 /* SmartCalendarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B67334E219C25C49007E2844 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Marcos Tirao";
+				TargetAttributes = {
+					B67334E919C25C49007E2844 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					B673350119C25C49007E2844 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = B67334E919C25C49007E2844;
+					};
+				};
+			};
+			buildConfigurationList = B67334E519C25C49007E2844 /* Build configuration list for PBXProject "SmartCalendar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B67334E119C25C49007E2844;
+			productRefGroup = B67334EB19C25C49007E2844 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B67334E919C25C49007E2844 /* SmartCalendar */,
+				B673350119C25C49007E2844 /* SmartCalendarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B67334E819C25C49007E2844 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B67334F819C25C49007E2844 /* Main.storyboard in Resources */,
+				B67334FD19C25C49007E2844 /* LaunchScreen.xib in Resources */,
+				B67334FA19C25C49007E2844 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B673350019C25C49007E2844 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B67334E619C25C49007E2844 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B67334F519C25C49007E2844 /* ViewController.swift in Sources */,
+				B67334F019C25C49007E2844 /* AppDelegate.swift in Sources */,
+				B67334F319C25C49007E2844 /* SmartCalendar.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B67334FE19C25C49007E2844 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B673350919C25C49007E2844 /* SmartCalendarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B673350419C25C49007E2844 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B67334E919C25C49007E2844 /* SmartCalendar */;
+			targetProxy = B673350319C25C49007E2844 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B67334F619C25C49007E2844 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B67334F719C25C49007E2844 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B67334FB19C25C49007E2844 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B67334FC19C25C49007E2844 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B673350A19C25C49007E2844 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B673350B19C25C49007E2844 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B673350D19C25C49007E2844 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SmartCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B673350E19C25C49007E2844 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SmartCalendar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B673351019C25C49007E2844 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SmartCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartCalendar.app/SmartCalendar";
+			};
+			name = Debug;
+		};
+		B673351119C25C49007E2844 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SmartCalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartCalendar.app/SmartCalendar";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B67334E519C25C49007E2844 /* Build configuration list for PBXProject "SmartCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B673350A19C25C49007E2844 /* Debug */,
+				B673350B19C25C49007E2844 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B673350C19C25C49007E2844 /* Build configuration list for PBXNativeTarget "SmartCalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B673350D19C25C49007E2844 /* Debug */,
+				B673350E19C25C49007E2844 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B673350F19C25C49007E2844 /* Build configuration list for PBXNativeTarget "SmartCalendarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B673351019C25C49007E2844 /* Debug */,
+				B673351119C25C49007E2844 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B67334F119C25C49007E2844 /* SmartCalendar.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B67334F219C25C49007E2844 /* SmartCalendar.xcdatamodel */,
+			);
+			currentVersion = B67334F219C25C49007E2844 /* SmartCalendar.xcdatamodel */;
+			path = SmartCalendar.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B67334E219C25C49007E2844 /* Project object */;
+}
