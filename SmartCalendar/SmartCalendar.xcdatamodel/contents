@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6251" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Calendar" representedClassName="SmartCalendar.Calendar" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="reminderText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Color" representedClassName="SmartCalendar.Color" syncable="YES">
+        <attribute name="blue" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="green" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="imagename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="red" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="school" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="School" inverseName="color" inverseEntity="School" syncable="YES"/>
+    </entity>
+    <entity name="Course" representedClassName="SmartCalendar.Course" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="NO NAME" syncable="YES"/>
+        <relationship name="schedule" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Schedule" inverseName="course" inverseEntity="Schedule" syncable="YES"/>
+        <relationship name="school" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="School" inverseName="course" inverseEntity="School" syncable="YES"/>
+        <relationship name="students" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="course" inverseEntity="Student" syncable="YES"/>
+        <relationship name="term" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Term" inverseName="course" inverseEntity="Term" syncable="YES"/>
+    </entity>
+    <entity name="Schedule" representedClassName="SmartCalendar.Schedule" syncable="YES">
+        <attribute name="classroom" optional="YES" attributeType="String" defaultValueString="NO CLASSROOM" syncable="YES"/>
+        <attribute name="endtime" optional="YES" attributeType="String" defaultValueString="12:00" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" defaultValueString="Write something" syncable="YES"/>
+        <attribute name="starttime" optional="YES" attributeType="String" defaultValueString="12:00" syncable="YES"/>
+        <attribute name="weekday" optional="YES" attributeType="String" defaultValueString="Mon" syncable="YES"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Course" inverseName="schedule" inverseEntity="Course" syncable="YES"/>
+    </entity>
+    <entity name="School" representedClassName="SmartCalendar.School" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" defaultValueString="ADDRESS" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" defaultValueString="CITY" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" defaultValueString="COUNTRY" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="NAME" syncable="YES"/>
+        <relationship name="color" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Color" inverseName="school" inverseEntity="Color" syncable="YES"/>
+        <relationship name="course" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Course" inverseName="school" inverseEntity="Course" syncable="YES"/>
+    </entity>
+    <entity name="Score" representedClassName="SmartCalendar.Score" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scoredescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="score" inverseEntity="Student" syncable="YES"/>
+        <relationship name="term" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Term" inverseName="score" inverseEntity="Term" syncable="YES"/>
+    </entity>
+    <entity name="Student" representedClassName="SmartCalendar.Student" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String" defaultValueString="EMAIL" syncable="YES"/>
+        <attribute name="lastname" optional="YES" attributeType="String" defaultValueString="LAST NAME" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" defaultValueString="FIRST NAME" syncable="YES"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="students" inverseEntity="Course" syncable="YES"/>
+        <relationship name="score" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Score" inverseName="student" inverseEntity="Score" syncable="YES"/>
+    </entity>
+    <entity name="Term" representedClassName="SmartCalendar.Term" syncable="YES">
+        <attribute name="enddate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startdate" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="term" inverseEntity="Course" syncable="YES"/>
+        <relationship name="score" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Score" inverseName="term" inverseEntity="Score" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Calendar" positionX="9" positionY="108" width="128" height="90"/>
+        <element name="Color" positionX="-36" positionY="63" width="128" height="120"/>
+        <element name="Course" positionX="-495" positionY="-226" width="128" height="118"/>
+        <element name="Schedule" positionX="-36" positionY="9" width="128" height="135"/>
+        <element name="School" positionX="0" positionY="54" width="128" height="135"/>
+        <element name="Score" positionX="-297" positionY="-72" width="128" height="150"/>
+        <element name="Student" positionX="-146" positionY="-252" width="128" height="118"/>
+        <element name="Term" positionX="-488" positionY="68" width="128" height="105"/>
+    </elements>
+</model>

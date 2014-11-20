@@ -16,55 +16,84 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if let tabBarController : UITabBarController = self.window?.rootViewController as? UITabBarController {
+            let tabBar = tabBarController.tabBar
+            if let tabBarItems = tabBar.items {
+                let tabBarItemCalendar : UITabBarItem = tabBarItems[0] as UITabBarItem
+                let tabBarItemSchool : UITabBarItem = tabBarItems[1] as UITabBarItem
+                let tabBarItemCourse : UITabBarItem = tabBarItems[2] as UITabBarItem
+                let tabBarItemStudents : UITabBarItem = tabBarItems[3] as UITabBarItem
+                let tabBarItemGrades : UITabBarItem = tabBarItems[4] as UITabBarItem
+                
+                tabBarItemCalendar.selectedImage = UIImage(named: "calendar-selected24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
+                tabBarItemCalendar.image = UIImage(named: "calendar24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
+                tabBarItemCalendar.title = "Calendar"
+                
+                tabBarItemSchool.selectedImage = UIImage(named: "school-selected24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
+                tabBarItemSchool.image = UIImage(named: "school24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
+                tabBarItemSchool.title = "School"
+                
+                tabBarItemCourse.selectedImage = UIImage(named: "teacher-selected24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
+                tabBarItemCourse.image = UIImage(named: "teacher24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
+                tabBarItemCourse.title = "Course"
+                
+                tabBarItemStudents.selectedImage = UIImage(named: "graduate-selected24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
+                tabBarItemStudents.image = UIImage(named: "graduate24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic )
+                tabBarItemStudents.title = "Students"
+                
+                tabBarItemGrades.selectedImage = UIImage(named: "grades-selected24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
+                tabBarItemGrades.image = UIImage(named: "grades24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
+                tabBarItemGrades.title = "Grades"
+                
+            }
+            
+            
+        }
+        
+        
+        
         return true
     }
 
     func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-        // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
 
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: NSURL = {
-        // The directory the application uses to store the Core Data store file. This code uses a directory named "ar.com.argsoftsolutions.SmartCalendar" in the application's documents Application Support directory.
-        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.count-1] as NSURL
     }()
 
     lazy var managedObjectModel: NSManagedObjectModel = {
-        // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = NSBundle.mainBundle().URLForResource("SmartCalendar", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOfURL: modelURL)
+        let modelURL = NSBundle.mainBundle().URLForResource("SmartCalendar", withExtension: "mom")!
+        return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
 
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
-        // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
-        // Create the coordinator and store
+        
         var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
         let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SmartCalendar.sqlite")
         var error: NSError? = nil
         var failureReason = "There was an error creating or loading the application's saved data."
+        
+        let options = [NSMigratePersistentStoresAutomaticallyOption : NSNumber(bool: true),
+            NSInferMappingModelAutomaticallyOption : NSNumber(bool:true), NSPersistentStoreUbiquitousContentNameKey : "SmartCalendarCloudStore"]
+        
         if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
             coordinator = nil
             // Report any error we got.
@@ -72,9 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             dict[NSUnderlyingErrorKey] = error
-            error = NSError.errorWithDomain("YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
-            // Replace this with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            error = NSError(domain:"YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             NSLog("Unresolved error \(error), \(error!.userInfo)")
             abort()
         }
