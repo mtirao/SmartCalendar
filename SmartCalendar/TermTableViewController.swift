@@ -103,8 +103,8 @@ class TermTableViewController: UITableViewController, NSFetchedResultsController
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            let managedContext = self.fetchedResultController.managedObjectContext
+            managedContext.deleteObject(self.fetchedResultController.objectAtIndexPath(indexPath) as Term)
         }
     }
     

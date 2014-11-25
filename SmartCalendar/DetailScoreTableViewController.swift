@@ -25,7 +25,7 @@ class DetailScoreTableViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         if let score = selectedScore {
-            examDescription?.text = "\(score.scoredescription)"
+            examDescription?.text = "\(score.scoredescription) - \(score.date)"
             scoreField?.text = "\(score.score)"
             
             scoreDetailField?.text = scoreDetailField!.text! + "\(score.student.lastname), \(score.student.name)"
@@ -53,6 +53,7 @@ class DetailScoreTableViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
 
     @IBAction func deleteButton(sender: AnyObject) {
         if let context = fetchedResultController?.managedObjectContext {
@@ -60,4 +61,6 @@ class DetailScoreTableViewController: UIViewController {
             self.navigationController?.popToRootViewControllerAnimated(true);
         }
     }
+    
+    
 }

@@ -97,8 +97,8 @@ class StudentTableViewController: UITableViewController, NSFetchedResultsControl
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            let managedContext = self.fetchedResultController.managedObjectContext
+            managedContext.deleteObject(self.fetchedResultController.objectAtIndexPath(indexPath) as Student)
         }
     }
     
@@ -115,10 +115,17 @@ class StudentTableViewController: UITableViewController, NSFetchedResultsControl
             detailView.context = self.fetchedResultController.managedObjectContext
             detailView.student = student
             
+            detailView.nameField?.enabled = true
+            detailView.lastNameField?.enabled = true
+            detailView.emailField?.enabled = true
             
             detailView.nameField?.text = student.name
             detailView.lastNameField?.text = student.lastname
             detailView.emailField?.text = student.email
+            
+            detailView.nameLabel?.textColor = Misc.foregroundColor()
+            detailView.lastNameLabel?.textColor = Misc.foregroundColor()
+            detailView.emailLabel?.textColor = Misc.foregroundColor()
             
             detailView.saveButton?.enabled = true
         }

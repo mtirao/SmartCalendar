@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let tabBarItemCourse : UITabBarItem = tabBarItems[2] as UITabBarItem
                 let tabBarItemStudents : UITabBarItem = tabBarItems[3] as UITabBarItem
                 let tabBarItemGrades : UITabBarItem = tabBarItems[4] as UITabBarItem
+                let tabBarItemReminders : UITabBarItem = tabBarItems[5] as UITabBarItem
                 
                 tabBarItemCalendar.selectedImage = UIImage(named: "calendar-selected24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
                 tabBarItemCalendar.image = UIImage(named: "calendar24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
@@ -45,6 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 tabBarItemGrades.selectedImage = UIImage(named: "grades-selected24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
                 tabBarItemGrades.image = UIImage(named: "grades24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
                 tabBarItemGrades.title = "Grades"
+                
+                tabBarItemReminders.selectedImage = UIImage(named: "reminder-selected24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
+                tabBarItemReminders.image = UIImage(named: "reminder24")?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
+                tabBarItemReminders.title = "Reminders"
+
                 
             }
             

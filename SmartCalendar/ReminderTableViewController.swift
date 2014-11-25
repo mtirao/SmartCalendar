@@ -119,8 +119,8 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            let managedContext = self.fetchedResultController.managedObjectContext
+            managedContext.deleteObject(self.fetchedResultController.objectAtIndexPath(indexPath) as Calendar)
         }
     }
     
@@ -131,7 +131,7 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let student = self.fetchedResultController.objectAtIndexPath(indexPath) as Student
+        let student = self.fetchedResultController.objectAtIndexPath(indexPath) as Calendar
         
         if let detailView = self.remiderDetailViewController {
             /*detailView.context = self.fetchedResultController.managedObjectContext
@@ -212,5 +212,6 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
         let reminder = self.fetchedResultController.objectAtIndexPath(indexPath) as Calendar
         
         cell.textLabel?.text = reminder.time
+        cell.detailTextLabel?.text = reminder.reminderText
         
     }}

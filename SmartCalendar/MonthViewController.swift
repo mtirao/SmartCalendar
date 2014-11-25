@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MonthViewController: UIViewController, CalendarDelegate {
 
@@ -40,12 +41,12 @@ class MonthViewController: UIViewController, CalendarDelegate {
         
         super.viewDidLoad()
         
-        calendar = Matrix(rows: 5, columns: 7)
+        calendar = Matrix(rows: 6, columns: 7)
         
         let w : Int = Int(self.view.frame.size.width / 7)
-        let h : Int = Int((self.view.frame.size.height - 160) / 5)
+        let h : Int = Int((self.view.frame.size.height - 160) / 6)
         
-        for(var i=0; i<5; i++) {
+        for(var i=0; i<6; i++) {
             for(var j=0; j<7; j++) {
                 let x : Int = j * Int(w)
                 let y : Int = i * Int(h) + 60
@@ -59,9 +60,12 @@ class MonthViewController: UIViewController, CalendarDelegate {
             }
         }
         
-        self.drawCalendar()
+        //self.drawCalendar()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.drawCalendar()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -102,7 +106,7 @@ class MonthViewController: UIViewController, CalendarDelegate {
         var isFirstRow = true
         var day = 1
         
-        for var i=0; i<5; i++ {
+        for var i=0; i<6; i++ {
             var ini = 0
             if isFirstRow {
                 ini = weekday - 1
@@ -117,6 +121,7 @@ class MonthViewController: UIViewController, CalendarDelegate {
                     let d = calendar![i, j] as DayTileView
                     d.day = "\(day)"
                     d.current = isCurrentDateForMonth(self.month, aDay: day, aYear: self.year)
+                    d.lines = reminderForDate(date1)
                 }
                 day++
             }
@@ -139,7 +144,25 @@ class MonthViewController: UIViewController, CalendarDelegate {
         return (aDay == comp.day) && (aMonth == comp.month) && (aYear == comp.year)
     }
 
-       
+    func reminderForDate(date1: NSDate?) -> [Calendar]? {
+        
+        if let date = date1 {
+            let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let managedObjectContext = appDelegate.managedObjectContext
+        
+            let fetchRequest = NSFetchRequest(entityName: "Calendar")
+            let predicate = NSPredicate(format: "date == %@", date )
+            fetchRequest.predicate = predicate
+        
+            let result = managedObjectContext!.executeFetchRequest(fetchRequest, error: nil);
+        
+            if let reminder = result {
+                return reminder as? [Calendar]
+            }
+        }
+        
+        return nil
+    }
     
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation

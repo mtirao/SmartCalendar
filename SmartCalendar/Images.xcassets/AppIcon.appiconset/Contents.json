@@ -3,37 +3,37 @@
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "pen29.png",
+      "filename" : "calendar29.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "pen58.png",
+      "filename" : "calendar58.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "pen40.png",
+      "filename" : "calendar40.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "pen80.png",
+      "filename" : "calendar80.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "pen76.png",
+      "filename" : "calendar76.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "pen152.png",
+      "filename" : "calendar152.png",
       "scale" : "2x"
     }
   ],

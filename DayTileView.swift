@@ -34,17 +34,31 @@ class DayTileView: UIView {
         let currentDayFontAttrs = [NSForegroundColorAttributeName : Misc.currentDayColor(),
             NSFontAttributeName : UIFont.boldSystemFontOfSize(20.0)]
         
+        let reminderFontAttrs = [NSForegroundColorAttributeName : Misc.foregroundColor2(),
+            NSFontAttributeName : UIFont.boldSystemFontOfSize(13.0)]
+        
         let box = UIBezierPath(rect: rect)
         UIColor.grayColor().setStroke()
         box.stroke()
         
+        var size : CGSize = CGSize(width: 0, height: 20)
         if let text : NSString = day {
-            let size = text.sizeWithAttributes(dayFontAttrs)
+            size = text.sizeWithAttributes(dayFontAttrs)
             if current! {
                 text.drawAtPoint(CGPoint(x: self.frame.size.width-size.width - 5, y: 5), withAttributes: currentDayFontAttrs)
             }else {
                 text.drawAtPoint(CGPoint(x: self.frame.size.width-size.width - 5, y: 5), withAttributes: dayFontAttrs)
             }
+        }
+        
+        let reminder = lines as? [Calendar]
+        
+        if let r = reminder {
+            for calendar in r {
+                let text : NSString = calendar.reminderText
+                text.drawAtPoint(CGPoint(x: 2, y: Int(size.height) + 2), withAttributes: reminderFontAttrs)
+            }
+            
         }
         
     }

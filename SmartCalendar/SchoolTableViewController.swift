@@ -86,8 +86,8 @@ class SchoolTableViewController: UITableViewController,  NSFetchedResultsControl
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            let managedContext = self.fetchedResultController.managedObjectContext
+            managedContext.deleteObject(self.fetchedResultController.objectAtIndexPath(indexPath) as School)
         }
     }
 
@@ -95,8 +95,6 @@ class SchoolTableViewController: UITableViewController,  NSFetchedResultsControl
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return false
     }
-
-    
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let school = self.fetchedResultController.objectAtIndexPath(indexPath) as School
@@ -105,10 +103,21 @@ class SchoolTableViewController: UITableViewController,  NSFetchedResultsControl
             schoolView.context = self.fetchedResultController.managedObjectContext
             schoolView.school = school
             
+            schoolView.nameField?.enabled = true
+            schoolView.addressField?.enabled = true
+            schoolView.cityField?.enabled = true
+            schoolView.countryField?.enabled = true
+
+            
             schoolView.nameField?.text = school.name
             schoolView.addressField?.text = school.address
             schoolView.cityField?.text = school.city
             schoolView.countryField?.text = school.country
+            
+            schoolView.nameLabel?.textColor = Misc.foregroundColor()
+            schoolView.addressLabel?.textColor = Misc.foregroundColor()
+            schoolView.cityLabel?.textColor = Misc.foregroundColor()
+            schoolView.countryLabel?.textColor = Misc.foregroundColor()
             
             schoolView.saveButton?.enabled = true;
         }

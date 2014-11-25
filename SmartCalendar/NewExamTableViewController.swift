@@ -52,6 +52,13 @@ class NewExamTableViewController: UITableViewController {
                             let formatter = NSDateFormatter()
                             formatter.dateStyle = NSDateFormatterStyle.ShortStyle
                             score.date = formatter.stringFromDate(date)
+                            
+                             let reminder = NSEntityDescription.insertNewObjectForEntityForName("Calendar", inManagedObjectContext: context) as Calendar
+                            
+                            reminder.date = date
+                            reminder.time = schedule.starttime
+                            reminder.reminderText = "Exam: \(note!.text) \(schedule.course.name) - \(schedule.course.school.name)"
+                            
                         }else {
                             score.date = ""
                         }

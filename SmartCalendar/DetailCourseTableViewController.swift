@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class DetailCourseTableViewController: UITableViewController {
+class DetailCourseTableViewController: UITableViewController, UITextFieldDelegate  {
     
     @IBOutlet weak var nameField : UITextField?
     @IBOutlet weak var scheduleLabel : UILabel?
@@ -42,9 +42,10 @@ class DetailCourseTableViewController: UITableViewController {
         termLabel?.textColor = UIColor.lightGrayColor()
         nameLabel?.textColor = UIColor.lightGrayColor()
         scheduleLabel?.textColor = UIColor.lightGrayColor()
+        
         context?.save(nil)
-        nameLabel?.text = ""
-        nameLabel?.enabled = false
+        nameField?.text = ""
+        nameField?.enabled = false
         
         course = nil
 
@@ -71,4 +72,12 @@ class DetailCourseTableViewController: UITableViewController {
             return false
         }
     }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        
+        if (textField.text == "UNNAMED") {
+            textField.text = ""
+        }
+    }
+
 }

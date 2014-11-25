@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import CoreData
 
 class DetailExamTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
@@ -37,6 +38,47 @@ class DetailExamTableViewController: UITableViewController, NSFetchedResultsCont
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        if let section = self.fetchedResultController.sections![section] as? NSFetchedResultsSectionInfo{
+            
+            let label = UILabel()
+            label.frame = CGRectMake(20, 6, tableView.bounds.size.width, 20)
+            label.backgroundColor = UIColor.whiteColor()
+            label.textColor = Misc.controlColor()
+    
+            let scores = section.objects as? [Score]
+            
+            var avg : Float = 0.0
+            
+            if let scoreList = scores {
+                for score in scoreList {
+                    avg = (score.score as NSString).floatValue + avg
+                }
+                avg = avg / Float(scoreList.count)
+            }
+            
+            let numberFormatter = NSNumberFormatter()
+            numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+            
+            if let avgString = numberFormatter.stringFromNumber(NSNumber(float: avg)) {
+                
+                label.text = "SCORE AVERAGE FOR THIS TERM: " + avgString
+                label.font = UIFont.boldSystemFontOfSize(16)
+            
+                let view = UIView(frame: CGRectMake(0,0, tableView.bounds.size.width, 20))
+                view.addSubview(label)
+            
+                return view
+            }
+            
+        }
+        
+        return nil
+
+    }
+    
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         if let section = self.fetchedResultController.sections![section] as? NSFetchedResultsSectionInfo{
@@ -160,7 +202,7 @@ class DetailExamTableViewController: UITableViewController, NSFetchedResultsCont
             
             let fetchRequest = NSFetchRequest(entityName: "Score")
             let predicate = NSPredicate(format: "student == %@", student)
-            let sortDescriptor = NSSortDescriptor(key: "term.startdate", ascending: true)
+            let sortDescriptor = NSSortDescriptor(key: "term.startdate", ascending: false)
             fetchRequest.predicate = predicate
             fetchRequest.returnsDistinctResults = true
             

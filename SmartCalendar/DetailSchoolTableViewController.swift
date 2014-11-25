@@ -9,12 +9,17 @@
 import UIKit
 import CoreData
 
-class DetailSchoolTableViewController: UITableViewController {
+class DetailSchoolTableViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameField : UITextField?
     @IBOutlet weak var addressField : UITextField?
     @IBOutlet weak var cityField : UITextField?
     @IBOutlet weak var countryField : UITextField?
+    
+    @IBOutlet weak var nameLabel : UILabel?
+    @IBOutlet weak var addressLabel : UILabel?
+    @IBOutlet weak var cityLabel : UILabel?
+    @IBOutlet weak var countryLabel : UILabel?
     
     @IBOutlet weak var saveButton : UIBarButtonItem?
     
@@ -38,8 +43,31 @@ class DetailSchoolTableViewController: UITableViewController {
             s.address = addressField!.text!
             s.city = cityField!.text!
             s.country = countryField!.text!
+            
+            addressField!.text = ""
+            nameField!.text = ""
+            cityField!.text = ""
+            countryField!.text = ""
+            
+            nameField!.enabled = false
+            addressField!.enabled = false
+            cityField!.enabled = false
+            countryField!.enabled = false
+            
+            nameLabel?.textColor = UIColor.lightGrayColor()
+            addressLabel?.textColor = UIColor.lightGrayColor()
+            cityLabel?.textColor = UIColor.lightGrayColor()
+            countryLabel?.textColor = UIColor.lightGrayColor()
+            
         }
         
         context?.save(nil)
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        
+        if (textField.text == "UNNAMED") {
+                textField.text = ""
+        }
     }
 }
