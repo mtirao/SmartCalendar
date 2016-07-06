@@ -16,7 +16,7 @@ class NewExamSchedTableViewController: UITableViewController ,  NSFetchedResults
     
     lazy var fetchedResultController : NSFetchedResultsController = {
         return NSFetchedResultsController()
-        }()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
